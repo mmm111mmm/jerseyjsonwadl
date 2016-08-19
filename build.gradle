@@ -1,0 +1,22 @@
+apply plugin: 'scala'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  compile 'org.scala-lang:scala-library:2.11.6'
+  compile 'org.glassfish.jersey.bundles:jaxrs-ri:2.23.1'
+  compile 'org.glassfish.jersey.containers:jersey-container-jetty-http:2.23.1'
+  compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.16'
+  compile "org.slf4j:slf4j-simple:1.6.1"
+}
+
+jar {
+  manifest {
+    attributes("Implementation-Title": "JerseyJsonWadl",
+               "Implementation-Version": "0.0.1")
+  }
+}
+
+sourceSets.main.scala.srcDirs = ['.']
